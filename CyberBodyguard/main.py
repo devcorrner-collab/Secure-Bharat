@@ -2,7 +2,7 @@ from backend.services.folder_watch import FolderWatcher
 from backend.services.scanner import scan_file
 from backend.database.db_manager import DatabaseManager
 
-# Global Objects
+# Global Object
 db = DatabaseManager()
 
 def process_new_file(filepath):
