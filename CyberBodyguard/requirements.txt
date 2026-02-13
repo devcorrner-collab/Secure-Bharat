@@ -6,3 +6,4 @@ python-dotenv
 plyer
 Pillow
 pyinstaller
+certifi
