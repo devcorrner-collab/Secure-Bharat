@@ -1,0 +1,8 @@
+customtkinter
+pymongo
+requests
+watchdog
+python-dotenv
+plyer
+Pillow
+pyinstaller
