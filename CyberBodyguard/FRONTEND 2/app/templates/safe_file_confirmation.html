@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#6c47c2",
+                "background-light": "#f7f6f8",
+                "background-dark": "#17141e",
+              },
+              fontFamily: {
+                "display": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<title>SecureBharat - Safe File Confirmation</title>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<!-- Main Background Container with Dark Purple Gradient -->
+<div class="relative flex min-h-screen w-full flex-col items-center justify-center bg-gradient-to-br from-[#17141e] via-[#2d1b4d] to-[#6c47c2] p-4 sm:p-8">
+<!-- Header / Logo -->
+<header class="absolute top-0 left-0 right-0 flex items-center justify-between px-6 py-6 sm:px-12">
+<div class="flex items-center gap-3 text-white">
+<div class="size-8 flex items-center justify-center bg-white/10 rounded-lg backdrop-blur-sm">
+<span class="material-symbols-outlined text-white text-2xl">shield_lock</span>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-tight">SecureBharat</h2>
+</div>
+<div class="hidden sm:flex items-center gap-2 text-white/70 text-sm font-medium">
+<span class="material-symbols-outlined text-green-400">verified_user</span>
+                System Protected
+            </div>
+</header>
+<!-- Centered Confirmation Card -->
+<div class="w-full max-w-[500px] bg-white dark:bg-[#1f1b29] rounded-xl shadow-2xl overflow-hidden">
+<!-- Status Section -->
+<div class="flex flex-col items-center pt-12 pb-6 px-8">
+<!-- Large Green Status Badge -->
+<div class="mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-green-500 text-white shadow-lg shadow-green-500/40">
+<span class="material-symbols-outlined text-4xl font-bold">check</span>
+</div>
+</div>
+<h1 class="text-[#141216] dark:text-white text-3xl font-bold leading-tight text-center mb-2">Downloaded File is Safe</h1>
+<p class="text-[#716a81] dark:text-gray-400 text-base font-normal leading-relaxed text-center">
+                    SecureBharat has verified that this file contains no threats or malicious signatures.
+                </p>
+</div>
+<!-- File Details Section -->
+<div class="px-8 pb-8">
+<div class="bg-primary/5 dark:bg-primary/10 rounded-lg p-5 border border-primary/10">
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-primary/10 pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">description</span>
+<p class="text-[#716a81] dark:text-gray-400 text-sm font-medium">File Name</p>
+</div>
+<p class="text-[#141216] dark:text-white text-sm font-bold truncate max-w-[200px]">{{ safe_file.filename | default('report_2023_final.pdf') }}</p>
+</div>
+<div class="flex justify-between items-center border-b border-primary/10 pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">database</span>
+<p class="text-[#716a81] dark:text-gray-400 text-sm font-medium">Size</p>
+</div>
+<p class="text-[#141216] dark:text-white text-sm font-bold">{{ safe_file.size | default('2.4 MB') }}</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-green-500 text-xl">verified</span>
+<p class="text-[#716a81] dark:text-gray-400 text-sm font-medium">Status</p>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-green-600 dark:text-green-400 text-sm font-bold">{{ safe_file.status | default('Verified Safe') }}</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="px-8 pb-10 flex flex-col gap-3">
+<button class="w-full flex items-center justify-center h-12 bg-primary hover:bg-primary/90 text-white rounded-lg font-bold text-base transition-colors shadow-lg shadow-primary/25">
+<span class="material-symbols-outlined mr-2">drafts</span>
+                    Open File
+                </button>
+<button class="w-full flex items-center justify-center h-12 bg-transparent hover:bg-gray-100 dark:hover:bg-white/5 text-[#716a81] dark:text-gray-400 rounded-lg font-semibold text-base transition-colors border border-gray-200 dark:border-gray-700">
+                    Close
+                </button>
+</div>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute bottom-8 text-white/40 text-xs flex items-center gap-4">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">lock</span>
+                End-to-end encrypted
+            </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">history</span>
+                Scanned 2m ago
+            </span>
+</div>
+<!-- Abstract Background Glows -->
+<div class="absolute top-1/4 -left-20 w-64 h-64 bg-primary/20 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-1/4 -right-20 w-80 h-80 bg-blue-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+</div>
+</body></html>

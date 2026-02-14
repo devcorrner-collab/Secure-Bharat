@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SecureBharat - Active Scan</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6c47c2",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#17141e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-immersive-gradient {
+            background: radial-gradient(circle at center, #2e1a5e 0%, #17141e 100%);
+        }
+        /* Visual non-percentage progress bar animation simulation using CSS */
+        .progress-shimmer {
+            background: linear-gradient(90deg, #6c47c2 0%, #a78bfa 50%, #6c47c2 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite linear;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<!-- Immersive Background Wrapper -->
+<div class="relative flex min-h-screen w-full flex-col items-center justify-center bg-immersive-gradient overflow-hidden">
+<!-- Decorative background elements -->
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px]"></div>
+<!-- Header / Logo Area -->
+<header class="absolute top-0 w-full px-10 py-8 flex items-center justify-between">
+<div class="flex items-center gap-3 text-white">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">shield_lock</span>
+</div>
+<h1 class="text-2xl font-bold tracking-tight">SecureBharat</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="size-10 rounded-full bg-cover bg-center border-2 border-primary/30" data-alt="User profile avatar placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDR58aYHT-cjSQWB3tAc4v3exrzIMymk4SDxRna24lflc3B70rgb4IbKTZxUbOoGiBFL5TM5CccoZBeXamkFCWYYXzReQq4zc-1H2nf8Tf7OD9tknFfIBwY7SzGajg1EtNOu_Hx9-YQ8j2DvHrtHmCgzgs-8x17-qskJ4oxw3tEKNEkYm-m7lAiH8_q_97FE5-Rk7u7jNq0B8xj3YBIpqd5BFNNIwgMPilMztPL6i37edatRzMXElVbYrs5lo_ibzMp6jhOrNZ2O0M')"></div>
+</div>
+</header>
+<!-- Main Content Container -->
+<main class="relative z-10 w-full max-w-[640px] px-6">
+<!-- Central Activity Card -->
+<div class="bg-white dark:bg-[#1f1b29] rounded-xl shadow-2xl overflow-hidden backdrop-blur-sm border border-white/10">
+<!-- Visual Header in Card -->
+<div class="h-48 w-full bg-primary/5 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" data-alt="Subtle geometric dot pattern background" style="background-image: radial-gradient(#6c47c2 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="relative flex flex-col items-center">
+<div class="size-20 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-5xl">download_for_offline</span>
+</div>
+<span class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">New Detection</span>
+</div>
+</div>
+<!-- Card Body -->
+<div class="p-8">
+<div class="text-center mb-8">
+<h2 class="text-[#141216] dark:text-white text-2xl font-bold leading-tight mb-2">New file detected in Downloads</h2>
+<p class="text-[#716a81] dark:text-gray-400 text-lg">Scanning downloaded file for potential threats...</p>
+</div>
+<!-- File Info Row -->
+<div class="flex items-center gap-4 p-4 bg-background-light dark:bg-background-dark/50 rounded-lg mb-8 border border-primary/10">
+<div class="size-12 bg-primary/20 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<div class="flex-1">
+<p class="text-[#141216] dark:text-white font-semibold leading-none mb-1">{{ current_file.name }}</p>
+<p class="text-[#716a81] dark:text-gray-400 text-sm">{{ current_file.size }} • {{ current_file.type }}</p>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm animate-pulse">lock</span>
+{% if current_file.encrypted %}
+<span class="text-xs font-bold uppercase">Encrypted</span>
+{% else %}
+<span class="text-xs font-bold uppercase">Unencrypted</span>
+{% endif %}
+</div>
+</div>
+<!-- Visual Non-Percentage Progress Bar -->
+<div class="space-y-3 mb-10">
+<div class="flex justify-between items-center text-sm font-medium">
+<span class="text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">search_hands_free</span>
+                                {{ current_file.current_step }}
+                            </span>
+<span class="text-[#716a81] dark:text-gray-400 italic">Processing...</span>
+</div>
+<div class="h-3 w-full bg-primary/10 rounded-full overflow-hidden">
+<div class="h-full w-full progress-shimmer rounded-full"></div>
+</div>
+<p class="text-center text-[#716a81] dark:text-gray-400 text-xs mt-2">Checking against {{ '{:,}'.format(current_file.signatures_checked) }} known threat signatures</p>
+</div>
+<!-- Action Area -->
+<div class="flex flex-col gap-4">
+<button class="w-full flex items-center justify-center gap-3 h-14 bg-primary/50 text-white/80 rounded-xl font-bold text-lg cursor-not-allowed border border-primary/20" disabled="">
+<span class="material-symbols-outlined animate-spin">sync</span>
+                            Scan in progress
+                        </button>
+<p class="text-center text-[#716a81] dark:text-gray-500 text-[10px] uppercase tracking-[0.2em] font-medium">
+                            Powered by SecureBharat AI Engine
+                        </p>
+</div>
+</div>
+</div>
+<!-- Stats/Footer context -->
+<div class="mt-8 grid grid-cols-3 gap-4">
+<div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 text-center">
+<p class="text-white/50 text-[10px] uppercase font-bold mb-1">Status</p>
+<p class="text-white font-bold">Secure</p>
+</div>
+<div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 text-center">
+<p class="text-white/50 text-[10px] uppercase font-bold mb-1">Scanned</p>
+<p class="text-white font-bold">1,284</p>
+</div>
+<div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 text-center">
+<p class="text-white/50 text-[10px] uppercase font-bold mb-1">Threats</p>
+<p class="text-white font-bold">0</p>
+</div>
+</div>
+</main>
+<!-- Sidebar / Secondary Navigation (Optional Desktop context) -->
+<div class="fixed left-0 top-0 h-full w-20 flex flex-col items-center justify-center gap-8 border-r border-white/5 py-10">
+<button class="p-3 rounded-xl bg-primary text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">dashboard</span>
+</button>
+<button class="p-3 rounded-xl text-white/40 hover:text-white transition-colors">
+<span class="material-symbols-outlined">shield</span>
+</button>
+<button class="p-3 rounded-xl text-white/40 hover:text-white transition-colors">
+<span class="material-symbols-outlined">history</span>
+</button>
+<button class="p-3 rounded-xl text-white/40 hover:text-white transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</div>
+</body></html>

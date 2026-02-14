@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SecureBharat - Scan History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6c47c2",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#17141e",
+                        "sidebar-dark": "#1c1231",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#141216]">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar: Dark Purple Background -->
+<aside class="w-80 bg-sidebar-dark flex flex-col border-r border-primary/20">
+<!-- Brand Header -->
+<div class="p-6 flex items-center gap-3">
+<div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">shield</span>
+</div>
+<div>
+<h1 class="text-white text-lg font-bold leading-tight">SecureBharat</h1>
+<p class="text-primary/60 text-xs font-medium uppercase tracking-wider">Enterprise Security</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="px-4 mb-6">
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="text-sm font-medium">Scan History</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="text-sm font-medium">Real-time Protection</span>
+</a>
+</div>
+</nav>
+<!-- Scan History List -->
+<div class="flex-1 overflow-y-auto px-4 pb-6">
+<h2 class="text-white/40 text-[11px] font-bold uppercase tracking-[0.1em] px-3 mb-3">Recent Scans</h2>
+<div class="flex flex-col gap-2">
+{% for scan in scans %}
+<!-- Scan Item -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:border-primary/50 transition-all">
+<div class="flex flex-col gap-0.5 min-w-0">
+<span class="text-white text-sm font-semibold truncate">{{ scan.filename }}</span>
+<span class="text-white/40 text-[11px]">{{ scan.scan_date }}</span>
+</div>
+<div class="flex items-center">
+<div class="size-2 rounded-full {% if scan.status == 'safe' %}bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]{% else %}bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.6)]{% endif %}"></div>
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+<!-- Sidebar Footer -->
+<div class="p-6 mt-auto border-t border-white/5">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-lg">settings</span>
+</div>
+<span class="text-white/70 text-sm font-medium">Settings</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 bg-background-light dark:bg-background-dark overflow-y-auto p-8 lg:p-12">
+<div class="max-w-4xl mx-auto">
+<header class="mb-10 flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-black text-[#141216] dark:text-white tracking-tight">Scan Summary</h2>
+<p class="text-primary/60 font-medium">Detailed security report for the selected file</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-sidebar-dark border border-[#dfdde3] dark:border-white/10 rounded-lg text-sm font-semibold hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined text-lg">print</span>
+                            Print
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-lg">download</span>
+                            Full Report
+                        </button>
+</div>
+</header>
+<!-- File Scan Summary Card -->
+<div class="bg-white dark:bg-sidebar-dark rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-[#dfdde3] dark:border-white/10 overflow-hidden">
+<!-- Card Header -->
+<div class="p-8 border-b border-[#dfdde3] dark:border-white/5 flex items-start justify-between">
+<div class="flex items-start gap-4">
+<div class="size-14 bg-green-50 rounded-xl flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined text-3xl">description</span>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-2xl font-bold text-[#141216] dark:text-white">report_q4.pdf</h3>
+<span class="px-3 py-1 bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400 text-xs font-bold uppercase tracking-wider rounded-full">Secure</span>
+</div>
+<p class="text-gray-500 dark:text-white/40 text-sm">Scan ID: SB-99283-PDF</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-[#141216] dark:text-white font-bold">100% Clean</p>
+<p class="text-gray-500 dark:text-white/40 text-xs">Analysis Engine v4.2.0</p>
+</div>
+</div>
+<!-- Details Grid -->
+<div class="grid grid-cols-2 p-8 gap-x-12 gap-y-8">
+<div class="flex flex-col gap-2">
+<label class="text-[11px] font-bold uppercase tracking-widest text-primary/60">File Path</label>
+<p class="text-sm font-medium text-[#141216] dark:text-white break-all">/users/admin/downloads/reports/report_q4.pdf</p>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-[11px] font-bold uppercase tracking-widest text-primary/60">File Size</label>
+<p class="text-sm font-medium text-[#141216] dark:text-white">1.24 MB</p>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-[11px] font-bold uppercase tracking-widest text-primary/60">Scan Date</label>
+<p class="text-sm font-medium text-[#141216] dark:text-white">October 24, 2023 · 14:20:04</p>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-[11px] font-bold uppercase tracking-widest text-primary/60">Threats Found</label>
+<p class="text-sm font-bold text-green-600">0 Total Threats</p>
+</div>
+<div class="flex flex-col gap-2 col-span-2">
+<label class="text-[11px] font-bold uppercase tracking-widest text-primary/60">Hash (SHA-256)</label>
+<code class="text-xs bg-gray-50 dark:bg-white/5 p-3 rounded-lg border border-[#dfdde3] dark:border-white/10 font-mono text-[#141216] dark:text-white/80">
+                                e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                            </code>
+</div>
+<div class="flex flex-col gap-2 col-span-2">
+<label class="text-[11px] font-bold uppercase tracking-widest text-primary/60">Status Details</label>
+<div class="flex items-center gap-2 text-sm text-gray-600 dark:text-white/60">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+                                File signature matches known safe database. Heuristic analysis completed with no anomalies.
+                            </div>
+</div>
+</div>
+<!-- Scan Stats / Metadata -->
+<div class="bg-gray-50 dark:bg-white/5 p-8 flex items-center justify-around border-t border-[#dfdde3] dark:border-white/5">
+<div class="text-center">
+<span class="block text-xl font-bold text-primary">0.02s</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Scan Time</span>
+</div>
+<div class="h-8 w-px bg-[#dfdde3] dark:bg-white/10"></div>
+<div class="text-center">
+<span class="block text-xl font-bold text-primary">2.1M</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Signatures Checked</span>
+</div>
+<div class="h-8 w-px bg-[#dfdde3] dark:bg-white/10"></div>
+<div class="text-center">
+<span class="block text-xl font-bold text-primary">AI-V3</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Heuristic Engine</span>
+</div>
+</div>
+</div>
+<!-- Abstract Visual Background Element -->
+<div class="mt-12 p-12 rounded-xl bg-gradient-to-br from-primary/10 to-transparent border border-primary/10 flex items-center justify-between">
+<div class="max-w-md">
+<h4 class="text-lg font-bold text-[#141216] dark:text-white mb-2">Automate your security scans</h4>
+<p class="text-sm text-gray-500 dark:text-white/40">Enable continuous monitoring to automatically scan every file as soon as it's downloaded or modified.</p>
+</div>
+<div class="size-24 rounded-full bg-primary/20 flex items-center justify-center relative overflow-hidden">
+<span class="material-symbols-outlined text-4xl text-primary animate-pulse">refresh</span>
+<div class="absolute inset-0 border-4 border-primary/20 rounded-full border-t-primary"></div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

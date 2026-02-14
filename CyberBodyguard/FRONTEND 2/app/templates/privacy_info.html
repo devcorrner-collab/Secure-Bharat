@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#6c47c2",
+              "background-light": "#f7f6f8",
+              "background-dark": "#17141e",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<title>SecureBharat | Privacy Assurance</title>
+</head>
+<body class="font-display bg-primary text-white min-h-screen flex flex-col">
+<!-- Header / Brand -->
+<header class="w-full max-w-7xl mx-auto px-6 py-8 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-white/20 p-2 rounded-lg flex items-center justify-center">
+<svg class="size-6 text-white" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight">SecureBharat</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-full border-2 border-white/20 overflow-hidden bg-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white/70">person</span>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col items-center justify-center px-6 py-12">
+<div class="max-w-4xl w-full text-center space-y-12">
+<!-- Hero Title -->
+<div class="space-y-4">
+<h1 class="text-5xl md:text-6xl font-extrabold tracking-tight">Your Privacy Matters</h1>
+<p class="text-white/70 text-lg max-w-2xl mx-auto">
+                    We built SecureBharat with a privacy-first architecture. Your data belongs to you, and we intend to keep it that way.
+                </p>
+</div>
+<!-- Feature Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-white/10 backdrop-blur-sm border border-white/10 p-8 rounded-xl flex flex-col items-center text-center group hover:bg-white/15 transition-all">
+<div class="bg-white/20 p-4 rounded-full mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">monitor</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Files scanned locally</h3>
+<p class="text-white/60 text-sm leading-relaxed">
+                        Your sensitive documents never leave your device. All processing happens on your local hardware.
+                    </p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white/10 backdrop-blur-sm border border-white/10 p-8 rounded-xl flex flex-col items-center text-center group hover:bg-white/15 transition-all">
+<div class="bg-white/20 p-4 rounded-full mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">cloud_off</span>
+</div>
+<h3 class="text-xl font-bold mb-3">No cloud upload</h3>
+<p class="text-white/60 text-sm leading-relaxed">
+                        We do not store, view, or transit your files to any external servers. Absolute isolation.
+                    </p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white/10 backdrop-blur-sm border border-white/10 p-8 rounded-xl flex flex-col items-center text-center group hover:bg-white/15 transition-all">
+<div class="bg-white/20 p-4 rounded-full mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">shield_person</span>
+</div>
+<h3 class="text-xl font-bold mb-3">No data tracking</h3>
+<p class="text-white/60 text-sm leading-relaxed">
+                        We don't collect usage statistics or personal identifiers. Your identity is yours alone.
+                    </p>
+</div>
+</div>
+<!-- CTA Button -->
+<div class="pt-8">
+<button class="bg-white text-primary hover:bg-white/90 px-10 py-4 rounded-xl text-lg font-bold shadow-xl transition-all active:scale-95 inline-flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+                    Back to Dashboard
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between border-t border-white/10 gap-6">
+<p class="text-white/50 text-sm font-medium">© 2024 SecureBharat. All rights reserved.</p>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-white/60 hover:text-white text-sm font-medium transition-colors" href="#">Privacy Policy</a>
+<a class="text-white/60 hover:text-white text-sm font-medium transition-colors" href="#">Terms of Service</a>
+<a class="text-white/60 hover:text-white text-sm font-medium transition-colors" href="#">Contact Support</a>
+</div>
+</footer>
+<!-- Background Decoration -->
+<div class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none overflow-hidden">
+<div class="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-white/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-black/10 rounded-full blur-[100px]"></div>
+</div>
+</body></html>

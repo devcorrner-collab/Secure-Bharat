@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SecureBharat - Dashboard | Version {{ version }}</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#6c47c2",
+              "background-light": "#f7f6f8",
+              "background-dark": "#17141e",
+              "success": "#22c55e",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .immersive-bg {
+            background: radial-gradient(circle at top right, #3c2a70, #17141e),
+                        radial-gradient(circle at bottom left, #6c47c233, transparent);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .status-glow {
+            box-shadow: 0 0 50px rgba(34, 197, 94, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-white font-display overflow-hidden">
+<!-- Main Wrapper with immersive gradient -->
+<div class="relative min-h-screen w-full flex flex-col immersive-bg">
+<!-- Header / Navigation -->
+<header class="flex items-center justify-between px-8 py-4 glass-panel sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-2xl">shield_lock</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">SecureBharat</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-white/90 hover:text-white transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium text-white/60 hover:text-white transition-colors" href="#">Protection</a>
+<a class="text-sm font-medium text-white/60 hover:text-white transition-colors" href="#">Scans</a>
+<a class="text-sm font-medium text-white/60 hover:text-white transition-colors" href="#">History</a>
+<a class="text-sm font-medium text-white/60 hover:text-white transition-colors" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white/80 transition-all border border-white/10">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<div class="h-10 w-10 rounded-full border-2 border-primary/40 p-0.5">
+<img alt="User profile" class="h-full w-full rounded-full object-cover" data-alt="Professional male user profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9m7C_R4B9DWOjDljMfsTn8YQrUFGl-Kj4FAgKyF_WtvzErOLEDbMXC94bNaxFjlZcAgylDC_wcMYYfmzmsSw27QJPEnjJwfqSa8i6BXpNuCG-E3wFuOfoMd2bev4H2nj6K82Vg1br3zuGlqfna7zz0cqbIUyPSD8RloGiu8Y0rPxJAETQtIDIM7xOnVgMAuegCZFJnpczRw_ZpeebXf5EY50fKhCcbWy8c_abDbFg34SdB3U0jlMZx8WxeeIQ2OGvUtbU7sVcfig"/>
+</div>
+</div>
+</header>
+<!-- Main Dashboard Content -->
+<main class="flex-1 flex flex-col items-center justify-center px-4 relative">
+<!-- Decorative blur elements -->
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -z-10"></div>
+<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-success/5 rounded-full blur-[120px] -z-10"></div>
+<!-- Central Status Card -->
+<div class="flex flex-col items-center max-w-2xl w-full">
+<!-- Status Badge -->
+<div class="relative mb-12">
+<div class="size-64 rounded-full glass-panel flex items-center justify-center status-glow border-success/20 border-2">
+<div class="size-48 rounded-full bg-success/10 flex items-center justify-center">
+<div class="size-32 rounded-full bg-success flex items-center justify-center shadow-[0_0_30px_rgba(34,197,94,0.4)]">
+<span class="material-symbols-outlined text-6xl text-white font-bold">check</span>
+</div>
+</div>
+</div>
+<!-- Ambient pulse effect (simulated) -->
+<div class="absolute inset-0 rounded-full border-2 border-success/30 scale-110 opacity-20"></div>
+</div>
+<div class="text-center space-y-4 mb-10">
+<h1 class="text-5xl font-bold tracking-tight text-white">System Safe</h1>
+<p class="text-white/60 text-lg font-medium">Your device is being monitored in real-time</p>
+</div>
+<!-- Primary Action -->
+<div class="flex flex-col items-center gap-6 w-full max-w-sm">
+<button class="group w-full flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-white py-5 rounded-xl font-bold text-lg transition-all shadow-xl shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5 active:translate-y-0">
+<span class="material-symbols-outlined group-hover:rotate-180 transition-transform duration-500">sync</span>
+                        Scan Downloads Now
+                    </button>
+<p class="text-sm text-white/40 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">info</span>
+                        Only newly downloaded files are scanned
+                    </p>
+</div>
+</div>
+<!-- Quick Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-20 w-full max-w-4xl px-4">
+{% for stat in quick_stats %}
+<div class="glass-panel rounded-xl p-5 flex items-center gap-4 group hover:border-primary/40 transition-colors cursor-default">
+<div class="size-12 rounded-lg bg-white/5 flex items-center justify-center {% if stat.color == 'primary' %}text-primary{% elif stat.color == 'success' %}text-success{% else %}text-blue-400{% endif %}">
+<span class="material-symbols-outlined">{{ stat.icon }}</span>
+</div>
+<div>
+<p class="text-xs font-medium text-white/40 uppercase tracking-wider">{{ stat.title }}</p>
+<p class="text-xl font-bold text-white">{{ stat.value }}</p>
+</div>
+</div>
+{% endfor %}
+</div>
+</main>
+<!-- Footer Info -->
+<footer class="p-6 flex justify-between items-center text-white/30 text-xs font-medium">
+<div class="flex items-center gap-4">
+<span>Version {{ version }}</span>
+<span class="h-1 w-1 bg-white/20 rounded-full"></span>
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+</div>
+<div class="flex items-center gap-2 text-success/80">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-success"></span>
+</span>
+{% if protection.cloud_connected %}
+{{ app_name }} Cloud Connected
+{% else %}
+Offline Mode
+{% endif %}
+            </div>
+</footer>
+</div>
+</body></html>
